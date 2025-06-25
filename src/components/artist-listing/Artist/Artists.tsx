@@ -4,12 +4,6 @@ import React, { useEffect, useState } from "react";
 import { artistData as staticArtists } from "@/data/artists";
 import ArtistCard from "./ArtistCard";
 import SkeletonCard from "./SkeletonCard"; // we'll define this next
-import { motion } from "framer-motion";
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 type Artist = {
   id: number;
@@ -95,9 +89,7 @@ function Artists({
       <h1 className="text-2xl font-bold mb-10">Artists</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredArtists.map((artist) => (
-          <motion.div variants={item} key={artist.id}>
-            <ArtistCard artist={artist} />
-          </motion.div>
+          <ArtistCard artist={artist} key={artist.id} />
         ))}
       </div>
     </div>

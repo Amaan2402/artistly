@@ -61,7 +61,7 @@ function OnboardForm() {
 
       <button
         type="submit"
-        className="w-full bg-[#5124ca] font-semibold text-lg rounded-md py-1"
+        className="w-full bg-[#5124ca] text-white font-semibold text-lg rounded-md py-1"
       >
         Submit
       </button>

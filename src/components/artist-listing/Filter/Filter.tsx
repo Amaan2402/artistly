@@ -23,7 +23,7 @@ function Filter({
   return (
     <div>
       <h1 className="text-2xl font-bold">Filters</h1>
-      <div className="md:mt-10 mt-3 flex items-center flex-wrap justify-between lg:block bg-[#0f1112] border border-[#1c1d21] rounded-lg p-4">
+      <div className="md:mt-10 mt-3 flex items-center flex-wrap justify-between lg:block border dark:border-[#1c1d21] rounded-lg p-4">
         <CategoryFilter category={category} setCategory={setCategory} />
         <LocationFilter location={location} setLocation={setLocation} />
         <PriceFilter priceRange={priceRange} setPriceRange={setPriceRange} />

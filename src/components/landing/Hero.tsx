@@ -13,7 +13,7 @@ function Hero() {
         </p>
 
         <Link href="/artist-listing">
-          <button className="bg-white rounded-lg text-[#131313] font-bold p-1 px-4 text-base sm:text-lg cursor-pointer">
+          <button className="rounded-lg font-bold p-1 px-4 text-base sm:text-lg cursor-pointer bg-black text-white dark:bg-white dark:text-black">
             Browse Artists
           </button>
         </Link>

@@ -35,10 +35,7 @@ export function MultiSelect({
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger
-        asChild
-        className="bg-[#1e1e1e] hover:bg-[#1e1e1e] hover:text-white"
-      >
+      <PopoverTrigger asChild>
         <Button
           variant="outline"
           role="combobox"
@@ -48,7 +45,7 @@ export function MultiSelect({
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-2 text-black border-border">
+      <PopoverContent className="w-[200px] p-2 border-border">
         {options.map((option) => (
           <div
             key={option}

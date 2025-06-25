@@ -19,7 +19,7 @@ export default function ReusableTable<T extends { id: number | string }>({
   return (
     <div className="overflow-x-auto">
       <table className="min-w-[800px] w-full border-collapse text-left">
-        <thead className="bg-[#18191c] border-b border-[#2a2b2f]">
+        <thead className="border-b dark:border-[#2a2b2f]">
           <tr>
             {columns.map((col) => (
               <th
@@ -40,7 +40,7 @@ export default function ReusableTable<T extends { id: number | string }>({
           {data.map((row) => (
             <tr
               key={row.id}
-              className="border-b border-[#2a2b2f] hover:bg-[#202124]/60 transition"
+              className="border-b dark:border-[#2a2b2f] transition"
             >
               {columns.map((col) => (
                 <td
