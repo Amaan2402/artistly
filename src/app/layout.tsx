@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/landing/Header";
 import { ThemeProvider } from "@/components/ThemeToggle/ThemeProvider";
 import Footer from "@/components/footer/Footer";
+import { ModeToggle } from "@/components/ThemeToggle/ModeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,10 @@ export default async function RootLayout({
           <div className="pb-10">
             <Header />
             <div className="px-4 sm:px-10 lg:px-20">{children}</div>
+            <div className="fixed bottom-5 right-4 z-50 sm:hidden rounded-full bg-background shadow-xl ring-1 ring-border p-2">
+              <ModeToggle />
+            </div>
+
             <Footer />
           </div>
         </ThemeProvider>
