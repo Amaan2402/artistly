@@ -1,12 +1,18 @@
 "use client";
 
 import React from "react";
-import { Controller } from "react-hook-form";
+import { Controller, Control, FieldErrors } from "react-hook-form";
 import { MultiSelect } from "@/components/ui/multiselect";
+import { FormData } from "@/shared/types"; // ✅ import shared type
 
 const languages = ["English", "Hindi", "Telugu", "Tamil", "Bengali"];
 
-function LanguageSelect({ control, errors }: any) {
+interface Props {
+  control: Control<FormData>;
+  errors: FieldErrors<FormData>;
+}
+
+function LanguageSelect({ control, errors }: Props) {
   return (
     <div>
       <label className="block font-semibold mb-1">Languages Spoken</label>

@@ -1,45 +1,28 @@
-"use client";
+export const metadata = {
+  title: "Explore Artists – Artistly",
+  description:
+    "Browse performing artists by category, location, and budget. Discover singers, dancers, DJs, and more for your event.",
+  keywords: [
+    "artist listing",
+    "book performers",
+    "filter artists",
+    "event entertainers",
+  ],
+  metadataBase: new URL("https://artistly.amaan24.tech"),
+};
 
-import Artists from "@/components/artist-listing/Artist/Artists";
-import Filter from "@/components/artist-listing/Filter/Filter";
-import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import ArtistPage from "@/components/artist-listing/Artist/ArtistPage";
+import { MotionFadeUp } from "@/components/common/MotionWrapper";
+import React from "react";
 
-function Page() {
-  const [category, setCategory] = useState("all");
-  const [location, setLocation] = useState("all");
-  const [priceRange, setPriceRange] = useState("all");
-
-  const searchParams = useSearchParams();
-  const categoryParams = searchParams.get("category");
-
-  useEffect(() => {
-    if (categoryParams) {
-      const formattedCategory = categoryParams.endsWith("s")
-        ? categoryParams.slice(0, -1)
-        : categoryParams;
-
-      setCategory(formattedCategory);
-    }
-  }, [categoryParams]);
-
+function page() {
   return (
-    <div className="lg:flex lg:justify-between">
-      <Filter
-        category={category}
-        setCategory={setCategory}
-        location={location}
-        setLocation={setLocation}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
-      />
-      <Artists
-        category={category}
-        location={location}
-        priceRange={priceRange}
-      />
+    <div>
+      <MotionFadeUp>
+        <ArtistPage />
+      </MotionFadeUp>
     </div>
   );
 }
 
-export default Page;
+export default page;

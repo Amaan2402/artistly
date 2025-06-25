@@ -2,8 +2,15 @@
 
 import React from "react";
 import { Input } from "@/components/ui/input";
+import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { FormData } from "@/shared/types"; // ✅ shared type
 
-function LocationInput({ register, errors }: any) {
+interface Props {
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
+}
+
+function LocationInput({ register, errors }: Props) {
   return (
     <div>
       <label className="block font-semibold mb-1">Location</label>

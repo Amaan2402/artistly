@@ -1,10 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Controller } from "react-hook-form";
+import { Controller, Control } from "react-hook-form";
 import Image from "next/image";
+import { FormData } from "@/shared/types"; // ✅ shared type
 
-function ImageUpload({ control }: any) {
+interface Props {
+  control: Control<FormData>;
+}
+
+function ImageUpload({ control }: Props) {
   const [preview, setPreview] = useState<string | null>(null);
 
   return (

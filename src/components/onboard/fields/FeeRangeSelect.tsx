@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Controller } from "react-hook-form";
+import { Controller, Control, FieldErrors } from "react-hook-form";
 import {
   Select,
   SelectContent,
@@ -9,16 +9,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { FormData } from "@/shared/types"; // ✅ shared type
 
 const feeOptions = [
-  "0 - 100 USD",
-  "100 - 200 USD",
-  "200 - 300 USD",
-  "300 - 500 USD",
-  "500+ USD",
+  "0 - 100 INR",
+  "100 - 200 INR",
+  "200 - 300 INR",
+  "300 - 500 INR",
+  "500+ INR",
 ];
 
-function FeeRangeSelect({ control, errors }: any) {
+interface Props {
+  control: Control<FormData>;
+  errors: FieldErrors<FormData>;
+}
+
+function FeeRangeSelect({ control, errors }: Props) {
   return (
     <div>
       <label className="block font-semibold mb-1">Fee Range</label>
@@ -28,10 +34,7 @@ function FeeRangeSelect({ control, errors }: any) {
         render={({ field }) => (
           <Select onValueChange={field.onChange} value={field.value}>
             <SelectTrigger className="text-white">
-              <SelectValue
-                placeholder="Select fee range"
-                className="text-white"
-              />
+              <SelectValue placeholder="Select fee range" />
             </SelectTrigger>
             <SelectContent>
               {feeOptions.map((fee) => (
