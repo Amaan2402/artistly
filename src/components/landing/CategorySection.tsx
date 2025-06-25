@@ -6,7 +6,7 @@ function CategorySection() {
     <div>
       <h1 className="mb-5 mt-10 text-2xl font-semibold">Categories</h1>
 
-      <div className="flex w-full justify-between">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {["Singers", "Dancers", "Speakers", "DJs"].map((category) => (
           <CategoryCard
             category={category}

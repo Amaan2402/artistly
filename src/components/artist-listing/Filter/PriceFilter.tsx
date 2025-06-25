@@ -15,10 +15,10 @@ function PriceFilter({
   setPriceRange: (value: string) => void;
 }) {
   return (
-    <div className="mt-3">
-      <h1 className="font-medium text-lg mb-2">Price Range</h1>
+    <div className="lg:mt-3">
+      <h1 className="font-medium text-sm md:text-lg mb-2">Price Range</h1>
       <Select onValueChange={setPriceRange} value={priceRange}>
-        <SelectTrigger className="w-[180px] font-bold">
+        <SelectTrigger className="md:w-[180px] w-[140px] font-bold">
           <SelectValue placeholder="All" />
         </SelectTrigger>
         <SelectContent>

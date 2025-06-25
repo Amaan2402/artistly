@@ -15,7 +15,6 @@ function Page() {
 
   useEffect(() => {
     if (categoryParams) {
-      // Remove trailing 's' only if it exists
       const formattedCategory = categoryParams.endsWith("s")
         ? categoryParams.slice(0, -1)
         : categoryParams;
@@ -25,7 +24,7 @@ function Page() {
   }, [categoryParams]);
 
   return (
-    <div className="flex justify-between">
+    <div className="lg:flex lg:justify-between">
       <Filter
         category={category}
         setCategory={setCategory}

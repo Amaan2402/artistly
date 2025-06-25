@@ -3,14 +3,16 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="flex justify-between items-center p-4 w-full mb-13 sticky top-0 right-0 left-0 px-40  bg-[#0f1112] border-b border-[#1c1d21] z-10">
+    <div className="flex justify-between py-1 items-center sm:p-4 min-w-full mb-2 md:mb-13 sticky top-0 right-0 left-0  px-2 sm:px-5 lg:px-20  bg-[#0f1112] border-b border-[#1c1d21] z-10">
       <div className="w-4/12">
         <Link href="/">
-          <h1 className="text-2xl font-bold">Artistly</h1>
+          <h1 className="text-base font-medium sm:text-2xl sm:font-bold">
+            Artistly
+          </h1>
         </Link>
       </div>
 
-      <div className="flex items-center space-x-15 text-lg font-semibold">
+      <div className="flex justify-between w-full items-center text-[10px] font-medium sm:text-lg sm:font-semibold lg:text-xl">
         <div>
           <Link href="/">
             <h1>Home</h1>
@@ -30,7 +32,9 @@ function Header() {
         </div>
 
         <div>
-          <h1>Dashboard</h1>
+          <Link href="/dashboard">
+            <h1>Dashboard</h1>
+          </Link>
         </div>
       </div>
     </div>

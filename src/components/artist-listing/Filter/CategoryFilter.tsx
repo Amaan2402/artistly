@@ -24,9 +24,9 @@ function CategoryFilter({
   };
   return (
     <div>
-      <h1 className="font-medium text-lg mb-2">Category</h1>
+      <h1 className="font-medium md:text-lg mb-2 text-sm">Category</h1>
       <Select onValueChange={handleSetCategory} value={category}>
-        <SelectTrigger className="w-[180px] font-bold">
+        <SelectTrigger className="md:w-[180px] w-[140px] font-bold">
           <SelectValue placeholder="All" />
         </SelectTrigger>
         <SelectContent>
