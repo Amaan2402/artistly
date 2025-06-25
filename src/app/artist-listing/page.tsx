@@ -13,13 +13,15 @@ export const metadata = {
 
 import ArtistPage from "@/components/artist-listing/Artist/ArtistPage";
 import { MotionFadeUp } from "@/components/common/MotionWrapper";
-import React from "react";
+import React, { Suspense } from "react";
 
 function page() {
   return (
     <div>
       <MotionFadeUp>
-        <ArtistPage />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ArtistPage />
+        </Suspense>
       </MotionFadeUp>
     </div>
   );
