@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { artistData as staticArtists } from "@/data/artists";
 import ArtistCard from "./ArtistCard";
 import SkeletonCard from "./SkeletonCard"; // we'll define this next
+import { MotionFadeUp } from "@/components/common/MotionWrapper";
 
 type Artist = {
   id: number;

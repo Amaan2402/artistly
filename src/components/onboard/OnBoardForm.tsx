@@ -22,6 +22,7 @@ function OnboardForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      email: "",
       bio: "",
       category: [],
       languages: [],
