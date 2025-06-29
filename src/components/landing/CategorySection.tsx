@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import CategoryCard from "./CategoryCard";
 import { useTheme } from "next-themes";
 
@@ -8,7 +8,7 @@ function CategorySection() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 

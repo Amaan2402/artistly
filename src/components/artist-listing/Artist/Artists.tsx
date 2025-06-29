@@ -1,62 +1,54 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { artistData as staticArtists } from "@/data/artists";
 import ArtistCard from "./ArtistCard";
 import SkeletonCard from "./SkeletonCard"; // we'll define this next
-import { MotionFadeUp } from "@/components/common/MotionWrapper";
-
-type Artist = {
-  id: number;
-  name: string;
-  category: string;
-  location: string;
-  priceRange: string;
-  image: string;
-};
+import { Artist } from "@/shared/types";
 
 function Artists({
+  artists,
   category,
   location,
-  priceRange,
+  feeRange,
 }: {
   category: string;
   location: string;
-  priceRange: string;
+  feeRange: string;
+  artists: Artist[];
 }) {
-  const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setArtists(staticArtists); // simulate API load
+    if (artists.length > 0) {
       setLoading(false);
-    }, 1000); // 1 second delay
-
-    return () => clearTimeout(timeout);
-  }, []);
+    } else {
+      setLoading(true);
+    }
+  }, [artists]);
 
   const filteredArtists = artists.filter((artist) => {
     const matchCategory =
       category === "all" ||
-      artist.category.toLowerCase() === category.toLowerCase();
+      artist.category
+        .map((cat) => cat.toLowerCase())
+        .includes(category.toLowerCase());
     const matchLocation =
       location === "all" ||
       artist.location.toLowerCase() === location.toLowerCase();
 
     const numericRange =
-      priceRange === "0-100"
+      feeRange === "0-100"
         ? [0, 100]
-        : priceRange === "100-200"
+        : feeRange === "100-200"
         ? [100, 200]
-        : priceRange === "200-300"
+        : feeRange === "200-300"
         ? [200, 300]
         : null;
 
     let matchPrice = true;
     if (numericRange) {
       const [min, max] = numericRange;
-      const priceMatch = artist.priceRange.match(/\d+/g);
+      const priceMatch = artist.feeRange.match(/\d+/g);
       if (priceMatch) {
         const avg = (parseInt(priceMatch[0]) + parseInt(priceMatch[1])) / 2;
         matchPrice = avg >= min && avg <= max;

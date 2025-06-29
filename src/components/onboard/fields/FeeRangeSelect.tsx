@@ -33,7 +33,7 @@ function FeeRangeSelect({ control, errors }: Props) {
         name="feeRange"
         render={({ field }) => (
           <Select onValueChange={field.onChange} value={field.value}>
-            <SelectTrigger className="text-white">
+            <SelectTrigger className="font-semibold">
               <SelectValue placeholder="Select fee range" />
             </SelectTrigger>
             <SelectContent>

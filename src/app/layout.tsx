@@ -4,6 +4,8 @@ import Header from "@/components/landing/Header";
 import { ThemeProvider } from "@/components/ThemeToggle/ThemeProvider";
 import Footer from "@/components/footer/Footer";
 import { ModeToggle } from "@/components/ThemeToggle/ModeToggle";
+import { Toaster } from "react-hot-toast";
+import ArtistModal from "@/modals/ArtistModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +52,8 @@ export default async function RootLayout({
 
             <Footer />
           </div>
+          <ArtistModal />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

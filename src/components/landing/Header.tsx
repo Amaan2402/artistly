@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "../ThemeToggle/ModeToggle";
+import { useModalStore } from "@/store/useModalStore";
 
 function Header() {
+  const { closeModal } = useModalStore();
+
   return (
-    <div className="flex justify-between dark:bg-[#0a0a0a] bg-white py-1 items-center md:p-4 min-w-full mb-2 md:mb-13 sticky top-0 right-0 left-0  px-2 sm:px-5 lg:px-20 border-b dark:border-[#1c1d21] border-gray-300 z-10">
+    <div
+      className="flex justify-between dark:bg-[#0a0a0a] bg-white py-1 items-center md:p-4 min-w-full mb-2 md:mb-13 sticky top-0 right-0 left-0  px-2 sm:px-5 lg:px-20 border-b dark:border-[#1c1d21] border-gray-300 z-[60]"
+      onClick={closeModal}
+    >
       <div className="w-4/12">
         <Link href="/">
           <h1 className="text-base font-medium md:text-2xl md:font-bold">
