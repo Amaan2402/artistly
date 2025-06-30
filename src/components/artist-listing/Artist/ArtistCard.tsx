@@ -4,7 +4,7 @@ import React from "react";
 
 function ArtistCard({ artist }: { artist: Artist }) {
   return (
-    <div className="border-2 dark:border-[#1c1d21] border-[#ebebec] rounded-lg overflow-hidden w-9/12">
+    <div className="border-2 dark:border-[#1c1d21] border-[#ebebec] rounded-lg overflow-hidden">
       <div className="relative w-full h-64">
         <Image
           src={artist.image}
